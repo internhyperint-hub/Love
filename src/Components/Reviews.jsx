@@ -23,33 +23,33 @@ const Reviews = ({
     };
 
     return (
-        <section className="mt-12">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">Customer Reviews</h2>
+        <section className="mt-8 sm:mt-10 md:mt-12">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-gray-900">Customer Reviews</h2>
 
             {/* Summary */}
-            <div className="flex flex-col items-center gap-3 mb-6">
-                <div className="flex items-center gap-3">
-                    <div className="flex items-center space-x-1">
+            <div className="flex flex-col items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="flex items-center space-x-0.5 sm:space-x-1">
                         {[1, 2, 3, 4, 5].map((i) => (
                             <i
                                 key={i}
                                 className="fa-solid fa-star"
-                                style={{ color: palette.star, fontSize: '18px' }}
+                                style={{ color: palette.star, fontSize: '16px' }}
                             />
                         ))}
                     </div>
                 </div>
                 <div className="text-center">
-                    <div className="text-xl font-semibold text-gray-900">{rating} out of 5</div>
-                    <div className="text-sm text-gray-500">Based on {totalReviews} reviews</div>
+                    <div className="text-lg sm:text-xl font-semibold text-gray-900">{rating} out of 5</div>
+                    <div className="text-xs sm:text-sm text-gray-500">Based on {totalReviews} reviews</div>
                 </div>
 
                 {/* Breakdown */}
-                <div className="w-full max-w-md mx-auto grid grid-cols-1 gap-2">
+                <div className="w-full max-w-md mx-auto grid grid-cols-1 gap-1.5 sm:gap-2">
                     {[5, 4, 3, 2, 1].map((stars) => (
-                        <div key={stars} className="flex items-center gap-3">
-                            <div className="w-12 text-sm font-medium text-gray-700">{stars} star</div>
-                            <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <div key={stars} className="flex items-center gap-2 sm:gap-3">
+                            <div className="w-10 sm:w-12 text-xs sm:text-sm font-medium text-gray-700">{stars} star</div>
+                            <div className="flex-1 h-1.5 sm:h-2 bg-gray-100 rounded-full overflow-hidden">
                                 <div
                                     className="h-full rounded-full"
                                     style={{
@@ -58,7 +58,7 @@ const Reviews = ({
                                     }}
                                 />
                             </div>
-                            <div className="w-12 text-right text-sm text-gray-600">{percent(breakdown[stars] || 0)}%</div>
+                            <div className="w-10 sm:w-12 text-right text-xs sm:text-sm text-gray-600">{percent(breakdown[stars] || 0)}%</div>
                         </div>
                     ))}
                 </div>
@@ -68,7 +68,7 @@ const Reviews = ({
             </div>
 
             {/* Reviews List */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 gap-3 sm:gap-4 md:gap-6">
                 {[
                     {
                         name: 'Aisha',
@@ -179,7 +179,7 @@ const Reviews = ({
                         text: 'Great value for money and looks very chic.'
                     }
                 ].map((rev, idx) => (
-                    <div key={idx} className="relative overflow-hidden border border-gray-100 rounded-none p-3 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-pink-300">
+                    <div key={idx} className="relative overflow-hidden border border-gray-100 rounded-none p-2.5 sm:p-3 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-pink-300">
                         <div
                             className="pointer-events-none absolute inset-0 opacity-15"
                             style={{
@@ -188,38 +188,38 @@ const Reviews = ({
                             }}
                         />
                         {/* Header */}
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2 min-w-0">
-                                <div className="w-8 h-8 bg-gray-200 text-gray-700 flex items-center justify-center text-xs font-semibold uppercase">
+                        <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-2">
+                            <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-200 text-gray-700 flex items-center justify-center text-[10px] sm:text-xs font-semibold uppercase">
                                     {rev.name.slice(0, 2)}
                                 </div>
                                 <div className="truncate">
-                                    <div className="font-semibold truncate">{rev.name}</div>
-                                    <div className="text-[11px] text-gray-500 truncate">{rev.location}</div>
+                                    <div className="text-sm sm:text-base font-semibold truncate">{rev.name}</div>
+                                    <div className="text-[10px] sm:text-[11px] text-gray-500 truncate">{rev.location}</div>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <span className="text-[10px] px-2 py-0.5 border border-green-300 text-green-700">Verified</span>
-                                <div className="text-sm text-gray-500 whitespace-nowrap">{rev.date}</div>
+                            <div className="flex items-center gap-1.5 sm:gap-2">
+                                <span className="text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 border border-green-300 text-green-700">Verified</span>
+                                <div className="text-xs sm:text-sm text-gray-500 whitespace-nowrap">{rev.date}</div>
                             </div>
                         </div>
 
-                        <div className="border-t mt-2" style={{ borderColor: palette.border }} />
+                        <div className="border-t mt-1.5 sm:mt-2" style={{ borderColor: palette.border }} />
 
-                        <div className="flex items-center gap-2 mt-3 mb-2">
-                            <div className="flex items-center space-x-1">
+                        <div className="flex items-center gap-1.5 sm:gap-2 mt-2 sm:mt-3 mb-1.5 sm:mb-2">
+                            <div className="flex items-center space-x-0.5 sm:space-x-1">
                                 {[1, 2, 3, 4, 5].map((i) => (
-                                    <i key={i} className="fa-solid fa-star" style={{ color: palette.star, fontSize: '14px' }} />
+                                    <i key={i} className="fa-solid fa-star" style={{ color: palette.star, fontSize: '12px' }} />
                                 ))}
                             </div>
                         </div>
                         {rev.title && (
-                            <div className="text-sm font-semibold text-gray-800 mb-1">{rev.title}</div>
+                            <div className="text-xs sm:text-sm font-semibold text-gray-800 mb-1">{rev.title}</div>
                         )}
                         <ReviewText text={rev.text} />
 
                         {/* Small thumbnails below description */}
-                        <div className="mt-3">
+                        <div className="mt-2 sm:mt-3">
                             {(() => {
                                 const countsPattern = [0, 1, 2, 0, 3, 1, 2, 0, 1, 3, 2, 0];
                                 const count = countsPattern[idx % countsPattern.length];
@@ -230,13 +230,13 @@ const Reviews = ({
                                 const images = Array.from({ length: count }).map((_, i) => placeholderImages[(start + i) % placeholderImages.length]);
                                 return (
                                     <>
-                                        <div className="flex items-center gap-2">
+                                        <div className="flex items-center gap-1.5 sm:gap-2">
                                             {images.map((src, i) => (
                                                 <img
                                                     key={i}
                                                     src={src}
                                                     alt="Jewelry"
-                                                    className="w-12 h-12 object-cover rounded-none border border-gray-200 shadow-sm opacity-90 hover:opacity-100 hover:scale-[1.02] transition"
+                                                    className="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-none border border-gray-200 shadow-sm opacity-90 hover:opacity-100 hover:scale-[1.02] transition"
                                                     style={{ filter: 'grayscale(15%)' }}
                                                 />
                                             ))}
@@ -263,12 +263,12 @@ function ReviewText({ text }) {
     const visible = expanded || !isLong ? text : text.slice(0, MAX_CHARS) + '…';
 
     return (
-        <div className="text-gray-700 leading-relaxed">
+        <div className="text-xs sm:text-sm text-gray-700 leading-relaxed">
             <p>{visible}</p>
             {isLong && (
                 <button
                     onClick={() => setExpanded(!expanded)}
-                    className="mt-1 text-xs underline text-pink-600 hover:text-pink-700"
+                    className="mt-1 text-[10px] sm:text-xs underline text-pink-600 hover:text-pink-700"
                 >
                     {expanded ? 'Read less' : 'Read more'}
                 </button>

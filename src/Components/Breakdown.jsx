@@ -182,7 +182,7 @@ const Breakdown = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-6">
+        <div className="max-w-4xl md:max-w-3xl mx-auto px-4 py-6">
             <div className="bg-white rounded-lg shadow-lg p-4 border border-gray-100">
                 <div className="mb-4">
 
@@ -193,7 +193,7 @@ const Breakdown = () => {
                 <div className="mb-6">
 
                     <div className="flex justify-center">
-                        <div className="space-y-0.5 w-full max-w-md">
+                        <div className="space-y-0.5 w-full max-w-md md:max-w-sm">
                             {[5, 4, 3, 2, 1].map((rating) => (
                                 <div key={rating} className="flex items-center space-x-2 p-1 rounded-md">
                                     <div className="flex items-center space-x-2 w-16">
